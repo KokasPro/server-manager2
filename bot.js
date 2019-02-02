@@ -52,7 +52,7 @@ client.user.setGame(`-help|MonsTis`,"https://www.twitch.tv/Music-bot")
 
 
 client.on('message', message => {
- var prefix = "_";
+ var prefix = "-";
 if (message.content.startsWith(prefix + 'help')) {
     let pages = [
 	`=-=-=-=-=-= 🌍 Public Commands - اوامر عامة 🌍 =-=-=-=-=-=
@@ -116,7 +116,7 @@ if (message.content.startsWith(prefix + 'help')) {
     💠 -لعبة فكك <= فكك
     💠 -لعبة عواصم <= عواصم
     💠 -البوت يعطيك نصائح <= هل تعلم
-      قريييب نضيف بعض الالعاب واذا تبون اي لعبة تعالو سيرفر المساعدة']
+      قريييب نضيف بعض الالعاب واذا تبون اي لعبة تعالو سيرفر المساعدة`]
 	let page = 1;
 
     let embed = new Discord.RichEmbed()
