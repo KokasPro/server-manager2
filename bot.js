@@ -52,7 +52,7 @@ client.user.setGame(`-help|MonsTis`,"https://www.twitch.tv/Music-bot")
 
 
 client.on('message', message => {
- var prefix = "-";
+ var prefix = "_";
 if (message.content.startsWith(prefix + 'help')) {
     let pages = [
 	`=-=-=-=-=-= 🌍 Public Commands - اوامر عامة 🌍 =-=-=-=-=-=
@@ -128,7 +128,7 @@ if (message.content.startsWith(prefix + 'help')) {
     ❖ stop2 => لإخرآج البوت من الروم
     ❖ np2 => لمعرفة الأغنية المشغلة حآليا
     ❖ queue2 => لمعرفة قآئمة التشغيل
-	مصمم البوت - - Mál ,קΣsĦǾǾ🔥 ❥ {G}#6201`]
+	مصمم البوت - - KokasPro#5250`]
 	let page = 1;
 
     let embed = new Discord.RichEmbed()
