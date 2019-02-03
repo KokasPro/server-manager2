@@ -2048,11 +2048,11 @@ client.on('message', message => {
 
 
    client.on('message', message => {
-     if (message.content === "-support") {
+     if (message.content === "_support") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#9B59B6")
-  .addField(" ** :gear: Server Support :gear: **" , "  **https://discord.gg/htNpU3J**")
+  .addField(" ** :gear: Server Support :gear: **" , "  **Made By: KokasPro#5250 : http://discord.me/kokaspro**")
      
      
   message.channel.sendEmbed(embed);
