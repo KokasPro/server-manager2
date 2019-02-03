@@ -26,7 +26,7 @@ const sql = require("sqlite");
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`-help|MonsTis`,"https://www.twitch.tv/Music-bot")
+client.user.setGame(`_help | Made by KokasPro#5250`,"https://www.twitch.tv/kokaspro")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -56,78 +56,63 @@ client.on('message', message => {
 if (message.content.startsWith(prefix + 'help')) {
     let pages = [
 	`=-=-=-=-=-= 🌍 Public Commands - اوامر عامة 🌍 =-=-=-=-=-=
-     ✴ -sug =====> To Suggest | لعمل اقتراح
-    ✴ -id ======> To Show Your ID | ايدي حسابك
-    ✴ -ping ====> Ping Of Bot | بنج حك البوت
-    ✴ -allbots => Show All Bots In The Server | لاضهار جميع البوتات
-    ✴ -bot =====> Information Of The Bot | معلومات البوت
-    ✴ -server ==> Information Of The Server | معلومات السيرفر
-    ✴ -count ===> Member Count | عدد الاشخاص في السيرفر
-    ✴ -cal =====> To Calculate | اله لحاسبة 
-    ✴ -tag =====> To Tag A Word | لعمل تاق لكلمة 
-    ✴ -rooms ===> Show Rooms Of Server | اضهار الرومات الي في السيرفر
-    ✴ -za5 =====> To decorate Some Word | لزخرفة الكلمات
-    ✴ -roles ===> Show Roles Of The Server | اضهار الرانكات
-    ✴ -emojis ==> Emoji Of Server | ايموجيات السيرفر   
-    ✴ -say =====> The Bot Say Any Thing | تكرار اي شي كتبتو
-    ✴ -image ===> To Show Image Of Server | لاضهار صورة السيرف 
-    ✴ -contact => To Contact Owners Bot | مراسلة صاحب البوت
-    ✴ -invite \ -inv => Invite Bot | لدعوة البوت
-    ✴ -embed ===> To Embed | لتكرار اي شي كتبتو بطريقة حلوة
-    ✴ -avatar ==> Your Avatar | صورتك الشخصية
-    ✴ -support => Server Support | سيرفر الدعم الفني
+     ✴ _sug =====> To Suggest | لعمل اقتراح
+    ✴ _id ======> To Show Your ID | ايدي حسابك
+    ✴ _ping ====> Ping Of Bot | بنج حك البوت
+    ✴ _allbots => Show All Bots In The Server | لاضهار جميع البوتات
+    ✴ _bot =====> Information Of The Bot | معلومات البوت
+    ✴ _server ==> Information Of The Server | معلومات السيرفر
+    ✴ _count ===> Member Count | عدد الاشخاص في السيرفر
+    ✴ _cal =====> To Calculate | اله لحاسبة 
+    ✴ _tag =====> To Tag A Word | لعمل تاق لكلمة 
+    ✴ _rooms ===> Show Rooms Of Server | اضهار الرومات الي في السيرفر
+    ✴ _za5 =====> To decorate Some Word | لزخرفة الكلمات
+    ✴ _roles ===> Show Roles Of The Server | اضهار الرانكات
+    ✴ _emojis ==> Emoji Of Server | ايموجيات السيرفر   
+    ✴ _say =====> The Bot Say Any Thing | تكرار اي شي كتبتو
+    ✴ _image ===> To Show Image Of Server | لاضهار صورة السيرف 
+    ✴ _embed ===> To Embed | لتكرار اي شي كتبتو بطريقة حلوة
+    ✴ _avatar ==> Your Avatar | صورتك الشخصية
+    ✴ _support => Server Support | سيرفر الدعم الفني
      ===========================================================
       React With ▶ To See Admins Commands`,
 	`=-=-=-=-=-= 🔧  Admin Commands - اوامر ادارية 🔧 =-=-=-=-=-=
-    ❖ -move @user => Move User To Your Room Voice | لسحب الشخص الى روومك
-    ❖ -mvall => Move All To Your Room Voice | لسحب الجميع الي روومك
-    ❖ -bc => Broadcast | رسالة جماعية الى كل اعضاء السيرفر
-    ❖ -role @user <rank> => Give User Rank | لأعطاء رتبة لعضو معين
-    ❖ -roleremove @user <rank> => remove Rank From User | لازالة الرتبة من شخص معين
-    ❖ -role all <rank> => Give All Rank | لأعطاء رتبة للجميع
-    ❖ -role humans <rank> => Give Humans Rank | لأعطاء رتبة للاشخاص فقط
-    ❖ -role bots <rank> => Give Bots Rank | لأعطاء رتبة لجميع البوتات
-    ❖ -hchannel => Hide Channel | اخفاء الشات
-    ❖ -schannel => Show The Hidden Channel | اضهار الشات المخفية
-    ❖ -clr <numbr> => Clear Chat With Number | مسح الشات بعدد
-    ❖ -clear => Clear Chat | مسح الشات
-    ❖ -mute @user <reason> => Mute User | اعطاء العضو ميوت لازم رتبة <Muted>
-    ❖ -unmute @user => Unmute User | لفك الميوت عن الشخص 
-    ❖ -kick @user <reason> => Kick User From Server | طرد الشخص من السيرفر
-    ❖ -ban @user <reason> => Ban User From Server | حضر الشخص من السيرفر
-    ❖ -mutechannel => Mute Channel | تقفيل الشات
-    ❖ -unmutechannel => Unmute Channel | فتح الشات
-    ❖ -dc => Delete All Rooms |  مسح كل الرومات
-    ❖ -dr => Delete All Rank <مسح كل الرانكات <لازم تكون رانك البوت فوق كل الرانكات
-    ❖ -ccolors <number> => Create Colors | ينشا لك الوان مع كم الوان تبي
-    ❖ -kv @user => Voice Kick | يطرد شخص من الرووم
-    ❖ -vonline => Create Channel Voice Online | يسوي رووم فويس اونلاين
+    ❖ _move @user => Move User To Your Room Voice | لسحب الشخص الى روومك
+    ❖ _mvall => Move All To Your Room Voice | لسحب الجميع الي روومك
+    ❖ _bc => Broadcast | رسالة جماعية الى كل اعضاء السيرفر
+    ❖ _role @user <rank> => Give User Rank | لأعطاء رتبة لعضو معين
+    ❖ _roleremove @user <rank> => remove Rank From User | لازالة الرتبة من شخص معين
+    ❖ _role all <rank> => Give All Rank | لأعطاء رتبة للجميع
+    ❖ _role humans <rank> => Give Humans Rank | لأعطاء رتبة للاشخاص فقط
+    ❖ _role bots <rank> => Give Bots Rank | لأعطاء رتبة لجميع البوتات
+    ❖ _hchannel => Hide Channel | اخفاء الشات
+    ❖ _schannel => Show The Hidden Channel | اضهار الشات المخفية
+    ❖ _clr <numbr> => Clear Chat With Number | مسح الشات بعدد
+    ❖ _clear => Clear Chat | مسح الشات
+    ❖ _mute @user <reason> => Mute User | اعطاء العضو ميوت لازم رتبة <Muted>
+    ❖ _unmute @user => Unmute User | لفك الميوت عن الشخص 
+    ❖ _kick @user <reason> => Kick User From Server | طرد الشخص من السيرفر
+    ❖ _ban @user <reason> => Ban User From Server | حضر الشخص من السيرفر
+    ❖ _mutechannel => Mute Channel | تقفيل الشات
+    ❖ _unmutechannel => Unmute Channel | فتح الشات
+    ❖ _dc => Delete All Rooms |  مسح كل الرومات
+    ❖ _dr => Delete All Rank <مسح كل الرانكات <لازم تكون رانك البوت فوق كل الرانكات
+    ❖ _ccolors <number> => Create Colors | ينشا لك الوان مع كم الوان تبي
+    ❖ _vonline => Create Channel Voice Online | يسوي رووم فويس اونلاين
      ===========================================================
      ✴ Create Channel **welcome** To Enable The Welcome 
-     ✴ Create Channel **suggestion** To Enable Command -sug
+     ✴ Create Channel **suggestion** To Enable Command _sug
      ===========================================================
       React With ▶ To See Games Commands`,
 	`=-=-=-=-=-= 🎯  Games Commands - اوامر الالعاب 🎯 =-=-=-=-=-=
-    💠 -rps => Rock & Paper & Scissors | لعبة حجر ورقة مقص
-    💠 -slots => Game Of Fruits | لعبة الفواكه
-    💠 -marry @user => لعبة الزواج
-    💠 -speed => لعبة سرعة كتابة 
-    💠 -لعبة فكك <= فكك
-    💠 -لعبة عواصم <= عواصم
-    💠 -البوت يعطيك نصائح <= هل تعلم
-      قريييب نضيف بعض الالعاب واذا تبون اي لعبة تعالو سيرفر المساعدة
-    ===========================================================
-      React With ▶ To See Music Commands`,
-	`=-=-=-=-=-= 🎯  Music Commands - اوامر الموسيقى 🎯 =-=-=-=-=-=
-    ❖ play2 => لتشغيل أغنية برآبط أو بأسم
-    ❖ skip 2=> لتجآوز الأغنية الحآلية
-    ❖ pause2 => إيقآف الأغنية مؤقتا
-    ❖ resume2 => لموآصلة الإغنية بعد إيقآفهآ مؤقتا
-    ❖ vol2 => لتغيير درجة الصوت 100 - 0
-    ❖ stop2 => لإخرآج البوت من الروم
-    ❖ np2 => لمعرفة الأغنية المشغلة حآليا
-    ❖ queue2 => لمعرفة قآئمة التشغيل
-	مصمم البوت - - Mál ,קΣsĦǾǾ🔥 ❥ {G}#6201`]
+    💠 _rps => Rock & Paper & Scissors | لعبة حجر ورقة مقص
+    💠 _slots => Game Of Fruits | لعبة الفواكه
+    💠 _marry @user => لعبة الزواج
+    💠 _speed => لعبة سرعة كتابة 
+    💠 _لعبة فكك <= فكك
+    💠 _لعبة عواصم <= عواصم
+    💠 _البوت يعطيك نصائح <= هل تعلم
+      قريييب نضيف بعض الالعاب واذا تبون اي لعبة تعالو سيرفر المساعدة`]
 	let page = 1;
 
     let embed = new Discord.RichEmbed()
@@ -484,7 +469,7 @@ if(cmd === `${prefix}sug`) {
 
 
 client.on('message', message => {
-    if(message.content == ('-id')) {    
+    if(message.content == ('_id')) {    
  
              if (message.channel.type === 'dm') return message.reply('This Command Is Not Avaible In Dm\'s :x:');   
             var Canvas = module.require('canvas');
@@ -825,13 +810,13 @@ message.channel.sendEmbed(embed)
 });
 
 client.on('message', message => {
-    if (message.content.startsWith("-bot")) {
+    if (message.content.startsWith("_bot")) {
     message.channel.send({
         embed: new Discord.RichEmbed()
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('RANDOM')
-            .setTitle('``INFO Speed Bot`` ')
+            .setTitle('``FloreX server manager made by : KokasPro#5250`` ')
             .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
             .addField('``RAM Usage``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
             .addField('``servers``', [client.guilds.size], true)
@@ -898,7 +883,7 @@ message.react("❌")
 
  client.on('message', message => {
               if (!message.channel.guild) return;
-      if(message.content =='-count')
+      if(message.content =='_count')
       var IzRo = new Discord.RichEmbed()
       .setThumbnail(message.author.avatarURL)
       .setFooter(message.author.username, message.author.avatarURL)
@@ -1417,7 +1402,7 @@ client.on("message", message => {
 });
 
 client.on('message', message => {
-    if (message.content === "-rooms") {
+    if (message.content === "_rooms") {
         if (message.author.bot) return
                       if (!message.guild) return;
 
@@ -1435,7 +1420,7 @@ client.on('message', message => {
 var AsciiTable = require('ascii-data-table').default
 client.on('message', message =>{
 
-    if(message.content == "-roles"){
+    if(message.content == "_roles"){
         var 
         ros=message.guild.roles.size,
         data = [['Rank', 'RoleName']]
@@ -1501,7 +1486,7 @@ client.on('message',function(message) {
 let args = message.content.split(" ").slice(1).join(" ");
 if(message.content.startsWith(prefix + "say")) {
 if(!args) return;
-message.channel.send(`**# ${args}**`); 
+message.channel.send(`** ${args}**`); 
 }
 });
 
@@ -1814,7 +1799,7 @@ client.on('message', message => {
        });
 
 client.on('message', message => {
-if(message.content.startsWith("-slots")) {
+if(message.content.startsWith("_slots")) {
   let slot1 = ['🍏', '🍇', '🍒', '🍍', '🍅', '🍆', '🍑', '🍓'];
   let slots1 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
   let slots2 = `${slot1[Math.floor(Math.random() * slot1.length)]}`;
@@ -1959,7 +1944,7 @@ var prefix = "_";
 });
 
 client.on('message', message => {
-   if (message.content.startsWith("-id")) {
+   if (message.content.startsWith("_id")) {
                 if(!message.channel.guild) return message.reply('** This command only for servers**');
 
                var mentionned = message.mentions.users.first();
@@ -2010,7 +1995,7 @@ client.on('message', message => {
    });
  
 client.on('message', message => {
-    if (message.content.startsWith("-avatar")) {
+    if (message.content.startsWith("_avatar")) {
 if(!message.channel.guild) return;
         var mentionned = message.mentions.users.first();
     var client;
@@ -2122,7 +2107,7 @@ msg.delete();
 
 
 client.on('message', message => {
-      if(message.content.startsWith ("-marry")) {
+      if(message.content.startsWith ("_marry")) {
       if(!message.channel.guild) return message.reply('** This command only for servers **')
       var proposed = message.mentions.members.first()
      
